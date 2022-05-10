@@ -1,6 +1,56 @@
+$primary: #4fc9da;
+$secondary: #ddf8fc;
+
 .app {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .connector {
+    position: absolute;
+    top: 0;
+    height: 5rem;
+    z-index: -10;
+    border-left: 1px dashed gray;
+  }
+
+  .connector.done {
+    border-left: 1px solid $primary;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  .active {
+    background-color: $primary;
+    color: #fff;
+  }
 }
