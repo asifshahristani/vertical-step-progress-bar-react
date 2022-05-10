@@ -3,9 +3,30 @@ $secondary: #ddf8fc;
 
 .app {
   display: flex;
+  gap: 3rem;
   height: 100vh;
   justify-content: center;
   align-items: center;
+
+  .buttons {
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      display: inline-block;
+      border-width: 0;
+      padding: 1rem 2rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      background-color: $secondary;
+      color: $primary;
+    }
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .task {
@@ -52,5 +73,11 @@ $secondary: #ddf8fc;
   .active {
     background-color: $primary;
     color: #fff;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    flex-direction: column;
   }
 }

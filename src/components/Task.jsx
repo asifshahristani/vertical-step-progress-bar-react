@@ -6,7 +6,7 @@ function Task({ step, title, description, isActive, isDone, isLast }) {
       <div className={isActive ? "step active" : "step"}>
         {isDone ? "✔" : step}
         {!isLast && (
-          <span class={isDone ? "connector done" : "connector"}></span>
+          <span className={isDone ? "connector done" : "connector"}></span>
         )}
       </div>
 
