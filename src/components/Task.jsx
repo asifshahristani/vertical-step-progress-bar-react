@@ -10,7 +10,7 @@ function Task({ step, title, description, isActive, isDone, isLast }) {
         )}
       </div>
 
-      <div>
+      <div className={isActive ? "task-info acitve-task-info" : "task-info"}>
         <div className="title"> {title} </div>
         <div className="description"> {description} </div>
       </div>

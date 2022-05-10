@@ -1,0 +1,54 @@
+.task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  transition: all 2s linear;
+
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    color: $shadow-color;
+  }
+
+  .connector {
+    position: absolute;
+    top: 0;
+    height: 5rem;
+    z-index: -10;
+    border-left: 1px dashed gray;
+  }
+
+  .connector.done {
+    border-left: 1px solid $primary;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  .active {
+    background-color: $primary;
+    color: #fff;
+  }
+
+  .task-info {
+    opacity: 0.6;
+  }
+
+  .acitve-task-info {
+    opacity: 1;
+  }
+}

@@ -1,16 +1,23 @@
 $primary: #4fc9da;
 $secondary: #ddf8fc;
+$shadow-color: #555;
+
+@import "./task";
 
 .app {
-  display: flex;
-  gap: 3rem;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  display: flex;
+  gap: 3rem;
 
   .buttons {
     display: flex;
-    justify-content: flex-start;
+
+    .disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
 
     button {
       display: inline-block;
@@ -21,58 +28,6 @@ $secondary: #ddf8fc;
       background-color: $secondary;
       color: $primary;
     }
-  }
-}
-
-.disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.task {
-  display: flex;
-  align-items: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  margin-top: 1.5rem;
-
-  .title {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-
-  .description {
-    font-size: 0.8rem;
-    color: #555;
-  }
-
-  .connector {
-    position: absolute;
-    top: 0;
-    height: 5rem;
-    z-index: -10;
-    border-left: 1px dashed gray;
-  }
-
-  .connector.done {
-    border-left: 1px solid $primary;
-  }
-
-  .step {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0.5rem 0.8rem;
-    border-radius: 5px;
-    background-color: $secondary;
-    color: $primary;
-  }
-
-  .active {
-    background-color: $primary;
-    color: #fff;
   }
 }
 

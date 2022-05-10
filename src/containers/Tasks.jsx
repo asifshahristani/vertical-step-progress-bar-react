@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Task from "../components/Task";
 
 function Tasks() {
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentTask, setCurrentTask] = useState(0);
 
-  const [tasks, setTasks] = useState([
+  const [tasks] = useState([
     {
       id: 1,
       title: "First",
@@ -36,8 +36,8 @@ function Tasks() {
             title={task.title}
             description={task.description}
             step={index + 1}
-            isDone={currentStep > index}
-            isActive={currentStep === index}
+            isDone={currentTask > index}
+            isActive={currentTask === index}
             isLast={index + 1 >= tasks.length}
           />
         ))}
@@ -45,18 +45,18 @@ function Tasks() {
 
       <div className="buttons">
         <button
-          onClick={() => currentStep > 0 && setCurrentStep(currentStep - 1)}
-          disabled={currentStep <= 0}
-          className={currentStep <= 0 ? "disabled" : ""}
+          onClick={() => currentTask > 0 && setCurrentTask(currentTask - 1)}
+          disabled={currentTask <= 0}
+          className={currentTask <= 0 ? "disabled" : ""}
         >
           Back
         </button>
         <button
           onClick={() =>
-            currentStep < tasks.length && setCurrentStep(currentStep + 1)
+            currentTask < tasks.length && setCurrentTask(currentTask + 1)
           }
-          disabled={currentStep >= tasks.length}
-          className={currentStep >= tasks.length ? "disabled" : ""}
+          disabled={currentTask >= tasks.length}
+          className={currentTask >= tasks.length ? "disabled" : ""}
         >
           Next
         </button>
